@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World!</title>
+        <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="exec.js" defer="defer"></script>
+    </head>
+    <body>
+        <div id="history1" class="history">
+            <div class="output">
+            We are using node <script>document.write(process.versions.node)</script>,
+            Chrome <script>document.write(process.versions.chrome)</script>,
+            and Electron <script>document.write(process.versions.electron)</script>.
+            </div>
+        </div>
+        <div id="input_area">
+                <img src="folder-24px.svg" onclick="exec_parse('ls')">
+            <input type="text" autofocus onchange="on_input(this)">
+            <img src="mic-24px.svg">
+        </div>
+    </body>
+</html>
